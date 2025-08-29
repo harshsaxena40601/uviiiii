@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+
+/* Dark mode background polish */
+:root { color-scheme: light dark; }
+.dark body { background-color: #0a0a0a; }
+
+
+/* Palette + base */
+:root { color-scheme: dark; }
+html, body { background-color: #0b0f12; }
+* { scrollbar-color: #2b2f33 #0b0f12; }
+a { color: #fff; }
+
+
+.card { @apply bg-bg-card border border-neutral-800 rounded-2xl shadow-sm; }
+.input { @apply bg-bg-soft border border-neutral-800 rounded-xl px-3 py-2 text-white placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[color:var(--tw-color-accent-ring)]; }
+
+
+/* Accent button without @apply to avoid Tailwind apply validation */
+.btn-accent {
+  background-color: #ef4444;
+  color: #ffffff;
+  border-radius: 0.75rem; /* rounded-xl */
+  padding: 0.5rem 1rem;   /* px-4 py-2 */
+  transition: transform 150ms ease;
+}
+.btn-accent:hover {
+  background-color: #dc2626;
+}
+.btn-accent:active {
+  transform: scale(0.95);
+}
